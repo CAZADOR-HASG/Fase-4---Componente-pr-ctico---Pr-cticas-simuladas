@@ -1,0 +1,168 @@
+2026-05-01 18:57:27 | INFO     | Sistema Software FJ iniciado correctamente.
+2026-05-01 18:57:27 | INFO     | Cliente creado: CLI001 - Ana García López
+2026-05-01 18:57:27 | INFO     | Cliente CLI001 registrado exitosamente.
+2026-05-01 18:57:27 | DEBUG    | Fin registro cliente CLI001. Total clientes: 1
+2026-05-01 18:57:27 | ERROR    | Datos inválidos para cliente CLI002: [Código CLI-001] El email 'correo_sin_arroba' no tiene un formato válido. (campo: email)
+2026-05-01 18:57:27 | DEBUG    | Fin registro cliente CLI002. Total clientes: 1
+2026-05-01 18:57:27 | INFO     | Cliente creado: CLI002 - Carlos Pérez Ruiz
+2026-05-01 18:57:27 | INFO     | Cliente CLI002 registrado exitosamente.
+2026-05-01 18:57:27 | DEBUG    | Fin registro cliente CLI002. Total clientes: 2
+2026-05-01 18:57:27 | ERROR    | Registro fallido: [Código CLI-002] El cliente con ID 'CLI001' ya está registrado.
+2026-05-01 18:57:27 | DEBUG    | Fin registro cliente CLI001. Total clientes: 2
+2026-05-01 18:57:27 | ERROR    | Datos inválidos para cliente CLI003: [Código CLI-001] El nombre solo puede contener letras y espacios. (campo: nombre)
+2026-05-01 18:57:27 | DEBUG    | Fin registro cliente CLI003. Total clientes: 2
+2026-05-01 18:57:27 | INFO     | Cliente creado: CLI003 - María Torres
+2026-05-01 18:57:27 | INFO     | Cliente CLI003 registrado exitosamente.
+2026-05-01 18:57:27 | DEBUG    | Fin registro cliente CLI003. Total clientes: 3
+2026-05-01 18:57:27 | INFO     | Servicio creado: ReservaSala [SRV001] - Sala Innovación
+2026-05-01 18:57:27 | INFO     | Servicio creado: ReservaSala [SRV002] - Auditorio Principal
+2026-05-01 18:57:27 | INFO     | Servicio creado: AlquilerEquipo [SRV003] - laptop
+2026-05-01 18:57:27 | INFO     | Servicio creado: AlquilerEquipo [SRV004] - holografo
+2026-05-01 18:57:27 | ERROR    | Equipo inválido SRV004: [Código SRV-001] Equipo 'holografo' no existe. Opciones: ['laptop', 'proyector', 'impresora', 'servidor', 'tablet']
+2026-05-01 18:57:27 | INFO     | Servicio creado: Asesoria [SRV005] - python
+2026-05-01 18:57:27 | INFO     | Servicio creado: Asesoria [SRV006] - ciberseguridad
+2026-05-01 18:57:27 | INFO     | Reserva creada: RES001 | Cliente: CLI001 | Servicio: SRV001 | Duración: 3
+2026-05-01 18:57:27 | INFO     | Intentando confirmar reserva RES001...
+2026-05-01 18:57:27 | INFO     | Reserva RES001 CONFIRMADA | Costo: $135,000
+2026-05-01 18:57:27 | DEBUG    | Proceso de confirmación de RES001 finalizado. Estado actual: CONFIRMADA
+2026-05-01 18:57:27 | INFO     | Reserva creada: RES002 | Cliente: CLI002 | Servicio: SRV003 | Duración: 5
+2026-05-01 18:57:27 | INFO     | Intentando confirmar reserva RES002...
+2026-05-01 18:57:27 | INFO     | Reserva RES002 CONFIRMADA | Costo: $428,400
+2026-05-01 18:57:27 | DEBUG    | Proceso de confirmación de RES002 finalizado. Estado actual: CONFIRMADA
+2026-05-01 18:57:27 | INFO     | Reserva creada: RES003 | Cliente: CLI003 | Servicio: SRV005 | Duración: 4
+2026-05-01 18:57:27 | INFO     | Intentando confirmar reserva RES003...
+2026-05-01 18:57:27 | INFO     | Reserva RES003 CONFIRMADA | Costo: $480,000
+2026-05-01 18:57:27 | DEBUG    | Proceso de confirmación de RES003 finalizado. Estado actual: CONFIRMADA
+2026-05-01 18:57:27 | ERROR    | Reserva RES004 fallida: [Código RES-001] No existe cliente con ID 'CLI999'.
+2026-05-01 18:57:27 | INFO     | Reserva creada: RES005 | Cliente: CLI001 | Servicio: SRV002 | Duración: 2
+2026-05-01 18:57:27 | INFO     | Intentando confirmar reserva RES005...
+2026-05-01 18:57:27 | ERROR    | Reserva RES005 no confirmada: [Código SRV-002] El servicio 'Sala: Auditorio Principal' no está disponible.
+2026-05-01 18:57:27 | DEBUG    | Proceso de confirmación de RES005 finalizado. Estado actual: PENDIENTE
+2026-05-01 18:57:27 | ERROR    | Reserva RES005 fallida: [Código RES-001] No se pudo confirmar la reserva RES005: [Código SRV-002] El servicio 'Sala: Auditorio Principal' no está disponible.
+2026-05-01 18:57:27 | INFO     | Reserva creada: RES006 | Cliente: CLI001 | Servicio: SRV001 | Duración: 99
+2026-05-01 18:57:27 | INFO     | Intentando confirmar reserva RES006...
+2026-05-01 18:57:27 | CRITICAL | Error inesperado al confirmar RES006: [Código SRV-001] No se puede reservar una sala por más de 12 horas seguidas.
+2026-05-01 18:57:27 | DEBUG    | Proceso de confirmación de RES006 finalizado. Estado actual: PENDIENTE
+2026-05-01 18:57:27 | ERROR    | Reserva RES006 fallida: [Código RES-001] Error inesperado al confirmar la reserva: [Código SRV-001] No se puede reservar una sala por más de 12 horas seguidas.
+2026-05-01 18:57:27 | INFO     | Intentando cancelar reserva RES001...
+2026-05-01 18:57:27 | DEBUG    | Proceso de cancelación de RES001 terminado.
+2026-05-01 18:57:27 | INFO     | Reserva RES001 CANCELADA | Motivo: El cliente reprogramó la reunión
+2026-05-01 18:57:27 | INFO     | Intentando cancelar reserva RES001...
+2026-05-01 18:57:27 | WARNING  | Cancelación inválida en RES001: [Código OPR-001] Operación 'cancelar' no permitida: la reserva ya estaba cancelada
+2026-05-01 18:57:27 | DEBUG    | Proceso de cancelación de RES001 terminado.
+2026-05-01 18:57:27 | WARNING  | [Código OPR-001] Operación 'cancelar' no permitida: la reserva ya estaba cancelada
+2026-05-01 18:57:27 | ERROR    | [Código RES-002] No se encontró la reserva con ID 'RES999'.
+2026-05-01 18:57:27 | INFO     | Estadísticas del sistema consultadas.
+2026-05-01 18:57:27 | INFO     | Simulación completa. Sistema cerrado correctamente.
+2026-05-04 00:13:13 | INFO     | Sistema Software FJ iniciado correctamente.
+2026-05-04 00:13:13 | INFO     | Cliente creado: CLI001 - Ana García López
+2026-05-04 00:13:13 | INFO     | Cliente CLI001 registrado exitosamente.
+2026-05-04 00:13:13 | DEBUG    | Fin registro cliente CLI001. Total clientes: 1
+2026-05-04 00:13:13 | ERROR    | Datos inválidos para cliente CLI002: [Código CLI-001] El email 'correo_sin_arroba' no tiene un formato válido. (campo: email)
+2026-05-04 00:13:13 | DEBUG    | Fin registro cliente CLI002. Total clientes: 1
+2026-05-04 00:13:13 | INFO     | Cliente creado: CLI002 - Carlos Pérez Ruiz
+2026-05-04 00:13:13 | INFO     | Cliente CLI002 registrado exitosamente.
+2026-05-04 00:13:13 | DEBUG    | Fin registro cliente CLI002. Total clientes: 2
+2026-05-04 00:13:13 | ERROR    | Registro fallido: [Código CLI-002] El cliente con ID 'CLI001' ya está registrado.
+2026-05-04 00:13:13 | DEBUG    | Fin registro cliente CLI001. Total clientes: 2
+2026-05-04 00:13:13 | ERROR    | Datos inválidos para cliente CLI003: [Código CLI-001] El nombre solo puede contener letras y espacios. (campo: nombre)
+2026-05-04 00:13:13 | DEBUG    | Fin registro cliente CLI003. Total clientes: 2
+2026-05-04 00:13:13 | INFO     | Cliente creado: CLI003 - María Torres
+2026-05-04 00:13:13 | INFO     | Cliente CLI003 registrado exitosamente.
+2026-05-04 00:13:13 | DEBUG    | Fin registro cliente CLI003. Total clientes: 3
+2026-05-04 00:13:13 | INFO     | Servicio creado: ReservaSala [SRV001] - Sala Innovación
+2026-05-04 00:13:13 | INFO     | Servicio creado: ReservaSala [SRV002] - Auditorio Principal
+2026-05-04 00:13:13 | INFO     | Servicio creado: AlquilerEquipo [SRV003] - laptop
+2026-05-04 00:13:13 | INFO     | Servicio creado: AlquilerEquipo [SRV004] - holografo
+2026-05-04 00:13:13 | ERROR    | Equipo inválido SRV004: [Código SRV-001] Equipo 'holografo' no existe. Opciones: ['laptop', 'proyector', 'impresora', 'servidor', 'tablet']
+2026-05-04 00:13:13 | INFO     | Servicio creado: Asesoria [SRV005] - python
+2026-05-04 00:13:13 | INFO     | Servicio creado: Asesoria [SRV006] - ciberseguridad
+2026-05-04 00:13:13 | INFO     | Reserva creada: RES001 | Cliente: CLI001 | Servicio: SRV001 | Duración: 3
+2026-05-04 00:13:13 | INFO     | Intentando confirmar reserva RES001...
+2026-05-04 00:13:13 | INFO     | Reserva RES001 CONFIRMADA | Costo: $135,000
+2026-05-04 00:13:13 | DEBUG    | Proceso de confirmación de RES001 finalizado. Estado actual: CONFIRMADA
+2026-05-04 00:13:13 | INFO     | Reserva creada: RES002 | Cliente: CLI002 | Servicio: SRV003 | Duración: 5
+2026-05-04 00:13:13 | INFO     | Intentando confirmar reserva RES002...
+2026-05-04 00:13:13 | INFO     | Reserva RES002 CONFIRMADA | Costo: $428,400
+2026-05-04 00:13:13 | DEBUG    | Proceso de confirmación de RES002 finalizado. Estado actual: CONFIRMADA
+2026-05-04 00:13:13 | INFO     | Reserva creada: RES003 | Cliente: CLI003 | Servicio: SRV005 | Duración: 4
+2026-05-04 00:13:13 | INFO     | Intentando confirmar reserva RES003...
+2026-05-04 00:13:13 | INFO     | Reserva RES003 CONFIRMADA | Costo: $480,000
+2026-05-04 00:13:13 | DEBUG    | Proceso de confirmación de RES003 finalizado. Estado actual: CONFIRMADA
+2026-05-04 00:13:13 | ERROR    | Reserva RES004 fallida: [Código RES-001] No existe cliente con ID 'CLI999'.
+2026-05-04 00:13:13 | INFO     | Reserva creada: RES005 | Cliente: CLI001 | Servicio: SRV002 | Duración: 2
+2026-05-04 00:13:13 | INFO     | Intentando confirmar reserva RES005...
+2026-05-04 00:13:13 | ERROR    | Reserva RES005 no confirmada: [Código SRV-002] El servicio 'Sala: Auditorio Principal' no está disponible.
+2026-05-04 00:13:13 | DEBUG    | Proceso de confirmación de RES005 finalizado. Estado actual: PENDIENTE
+2026-05-04 00:13:13 | ERROR    | Reserva RES005 fallida: [Código RES-001] No se pudo confirmar la reserva RES005: [Código SRV-002] El servicio 'Sala: Auditorio Principal' no está disponible.
+2026-05-04 00:13:13 | INFO     | Reserva creada: RES006 | Cliente: CLI001 | Servicio: SRV001 | Duración: 99
+2026-05-04 00:13:13 | INFO     | Intentando confirmar reserva RES006...
+2026-05-04 00:13:13 | CRITICAL | Error inesperado al confirmar RES006: [Código SRV-001] No se puede reservar una sala por más de 12 horas seguidas.
+2026-05-04 00:13:13 | DEBUG    | Proceso de confirmación de RES006 finalizado. Estado actual: PENDIENTE
+2026-05-04 00:13:13 | ERROR    | Reserva RES006 fallida: [Código RES-001] Error inesperado al confirmar la reserva: [Código SRV-001] No se puede reservar una sala por más de 12 horas seguidas.
+2026-05-04 00:13:13 | INFO     | Intentando cancelar reserva RES001...
+2026-05-04 00:13:13 | DEBUG    | Proceso de cancelación de RES001 terminado.
+2026-05-04 00:13:13 | INFO     | Reserva RES001 CANCELADA | Motivo: El cliente reprogramó la reunión
+2026-05-04 00:13:13 | INFO     | Intentando cancelar reserva RES001...
+2026-05-04 00:13:13 | WARNING  | Cancelación inválida en RES001: [Código OPR-001] Operación 'cancelar' no permitida: la reserva ya estaba cancelada
+2026-05-04 00:13:13 | DEBUG    | Proceso de cancelación de RES001 terminado.
+2026-05-04 00:13:13 | WARNING  | [Código OPR-001] Operación 'cancelar' no permitida: la reserva ya estaba cancelada
+2026-05-04 00:13:13 | ERROR    | [Código RES-002] No se encontró la reserva con ID 'RES999'.
+2026-05-04 00:13:13 | INFO     | Estadísticas del sistema consultadas.
+2026-05-04 00:13:13 | INFO     | Simulación completa. Sistema cerrado correctamente.
+2026-05-04 00:13:13 | INFO     | Sistema Software FJ iniciado correctamente.
+2026-05-04 00:13:13 | INFO     | Cliente creado: CLI001 - Ana García López
+2026-05-04 00:13:13 | INFO     | Cliente CLI001 registrado exitosamente.
+2026-05-04 00:13:13 | DEBUG    | Fin registro cliente CLI001. Total clientes: 1
+2026-05-04 00:13:13 | ERROR    | Datos inválidos para cliente CLI002: [Código CLI-001] El email 'correo_sin_arroba' no tiene un formato válido. (campo: email)
+2026-05-04 00:13:13 | DEBUG    | Fin registro cliente CLI002. Total clientes: 1
+2026-05-04 00:13:13 | INFO     | Cliente creado: CLI002 - Carlos Pérez Ruiz
+2026-05-04 00:13:13 | INFO     | Cliente CLI002 registrado exitosamente.
+2026-05-04 00:13:13 | DEBUG    | Fin registro cliente CLI002. Total clientes: 2
+2026-05-04 00:13:13 | ERROR    | Registro fallido: [Código CLI-002] El cliente con ID 'CLI001' ya está registrado.
+2026-05-04 00:13:13 | DEBUG    | Fin registro cliente CLI001. Total clientes: 2
+2026-05-04 00:13:13 | ERROR    | Datos inválidos para cliente CLI003: [Código CLI-001] El nombre solo puede contener letras y espacios. (campo: nombre)
+2026-05-04 00:13:13 | DEBUG    | Fin registro cliente CLI003. Total clientes: 2
+2026-05-04 00:13:13 | INFO     | Cliente creado: CLI003 - María Torres
+2026-05-04 00:13:13 | INFO     | Cliente CLI003 registrado exitosamente.
+2026-05-04 00:13:13 | DEBUG    | Fin registro cliente CLI003. Total clientes: 3
+2026-05-04 00:13:13 | INFO     | Servicio creado: ReservaSala [SRV001] - Sala Innovación
+2026-05-04 00:13:13 | INFO     | Servicio creado: ReservaSala [SRV002] - Auditorio Principal
+2026-05-04 00:13:13 | INFO     | Servicio creado: AlquilerEquipo [SRV003] - laptop
+2026-05-04 00:13:13 | INFO     | Servicio creado: AlquilerEquipo [SRV004] - holografo
+2026-05-04 00:13:13 | ERROR    | Equipo inválido SRV004: [Código SRV-001] Equipo 'holografo' no existe. Opciones: ['laptop', 'proyector', 'impresora', 'servidor', 'tablet']
+2026-05-04 00:13:13 | INFO     | Servicio creado: Asesoria [SRV005] - python
+2026-05-04 00:13:13 | INFO     | Servicio creado: Asesoria [SRV006] - ciberseguridad
+2026-05-04 00:13:13 | INFO     | Reserva creada: RES001 | Cliente: CLI001 | Servicio: SRV001 | Duración: 3
+2026-05-04 00:13:13 | INFO     | Intentando confirmar reserva RES001...
+2026-05-04 00:13:13 | INFO     | Reserva RES001 CONFIRMADA | Costo: $135,000
+2026-05-04 00:13:13 | DEBUG    | Proceso de confirmación de RES001 finalizado. Estado actual: CONFIRMADA
+2026-05-04 00:13:13 | INFO     | Reserva creada: RES002 | Cliente: CLI002 | Servicio: SRV003 | Duración: 5
+2026-05-04 00:13:13 | INFO     | Intentando confirmar reserva RES002...
+2026-05-04 00:13:13 | INFO     | Reserva RES002 CONFIRMADA | Costo: $428,400
+2026-05-04 00:13:13 | DEBUG    | Proceso de confirmación de RES002 finalizado. Estado actual: CONFIRMADA
+2026-05-04 00:13:13 | INFO     | Reserva creada: RES003 | Cliente: CLI003 | Servicio: SRV005 | Duración: 4
+2026-05-04 00:13:13 | INFO     | Intentando confirmar reserva RES003...
+2026-05-04 00:13:13 | INFO     | Reserva RES003 CONFIRMADA | Costo: $480,000
+2026-05-04 00:13:13 | DEBUG    | Proceso de confirmación de RES003 finalizado. Estado actual: CONFIRMADA
+2026-05-04 00:13:13 | ERROR    | Reserva RES004 fallida: [Código RES-001] No existe cliente con ID 'CLI999'.
+2026-05-04 00:13:13 | INFO     | Reserva creada: RES005 | Cliente: CLI001 | Servicio: SRV002 | Duración: 2
+2026-05-04 00:13:13 | INFO     | Intentando confirmar reserva RES005...
+2026-05-04 00:13:13 | ERROR    | Reserva RES005 no confirmada: [Código SRV-002] El servicio 'Sala: Auditorio Principal' no está disponible.
+2026-05-04 00:13:13 | DEBUG    | Proceso de confirmación de RES005 finalizado. Estado actual: PENDIENTE
+2026-05-04 00:13:13 | ERROR    | Reserva RES005 fallida: [Código RES-001] No se pudo confirmar la reserva RES005: [Código SRV-002] El servicio 'Sala: Auditorio Principal' no está disponible.
+2026-05-04 00:13:13 | INFO     | Reserva creada: RES006 | Cliente: CLI001 | Servicio: SRV001 | Duración: 99
+2026-05-04 00:13:13 | INFO     | Intentando confirmar reserva RES006...
+2026-05-04 00:13:13 | CRITICAL | Error inesperado al confirmar RES006: [Código SRV-001] No se puede reservar una sala por más de 12 horas seguidas.
+2026-05-04 00:13:13 | DEBUG    | Proceso de confirmación de RES006 finalizado. Estado actual: PENDIENTE
+2026-05-04 00:13:13 | ERROR    | Reserva RES006 fallida: [Código RES-001] Error inesperado al confirmar la reserva: [Código SRV-001] No se puede reservar una sala por más de 12 horas seguidas.
+2026-05-04 00:13:13 | INFO     | Intentando cancelar reserva RES001...
+2026-05-04 00:13:13 | DEBUG    | Proceso de cancelación de RES001 terminado.
+2026-05-04 00:13:13 | INFO     | Reserva RES001 CANCELADA | Motivo: El cliente reprogramó la reunión
+2026-05-04 00:13:13 | INFO     | Intentando cancelar reserva RES001...
+2026-05-04 00:13:13 | WARNING  | Cancelación inválida en RES001: [Código OPR-001] Operación 'cancelar' no permitida: la reserva ya estaba cancelada
+2026-05-04 00:13:13 | DEBUG    | Proceso de cancelación de RES001 terminado.
+2026-05-04 00:13:13 | WARNING  | [Código OPR-001] Operación 'cancelar' no permitida: la reserva ya estaba cancelada
+2026-05-04 00:13:13 | ERROR    | [Código RES-002] No se encontró la reserva con ID 'RES999'.
+2026-05-04 00:13:13 | INFO     | Estadísticas del sistema consultadas.
+2026-05-04 00:13:13 | INFO     | Simulación completa. Sistema cerrado correctamente.
