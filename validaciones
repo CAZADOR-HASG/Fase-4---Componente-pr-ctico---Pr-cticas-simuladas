@@ -1,0 +1,23 @@
+# Autor: [john tobar]
+# Descripción: Implementación de validaciones robustas y excepciones para Software FJ
+
+class DatosClienteIncompletosError(Exception):
+    """Excepción lanzada cuando los datos obligatorios del cliente son inválidos[cite: 283, 285]."""
+    pass
+
+class Cliente:
+    def __init__(self, nombre, email):
+        # Validación estricta: El nombre no puede estar vacío y el email debe ser válido 
+        try:
+            if not nombre or len(nombre) < 3:
+                raise DatosClienteIncompletosError("El nombre es demasiado corto o está vacío.")
+            if "@" not in email or "." not in email:
+                raise DatosClienteIncompletosError("El formato del correo electrónico es incorrecto.")
+            
+            self.__nombre = nombre  # Encapsulación de datos personales 
+            self.__email = email
+        except DatosClienteIncompletosError as e:
+            # Registro automático en el archivo de logs [cite: 284, 297]
+            from logger import Logger
+            Logger.registrar_evento(f"Error Crítico: {e}")
+            raise # Re-lanza la excepción para que el sistema la maneje
