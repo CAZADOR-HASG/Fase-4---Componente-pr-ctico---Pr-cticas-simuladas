@@ -146,6 +146,7 @@ def main():
     separador("CREACIÓN DE RESERVAS")
 
     # OP 13: Reserva válida de sala → debe confirmarse
+    # Se realizan pruebas de reservas válidas e inválidas para verificar estabilidad
     gestor.crear_reserva(
         id_reserva="RES001",
         id_cliente="CLI001",
@@ -187,6 +188,7 @@ def main():
     # Accedemos al servicio directamente para desactivarlo
     servicio_auditorio = gestor._GestorSistema__servicios.get("SRV002")
     if servicio_auditorio:
+    # Se cambia manualmente el estado del servicio para probar manejo de errores
         servicio_auditorio.disponible = False
         print("  ⚠️  Auditorio Principal marcado como no disponible.")
 
@@ -236,6 +238,7 @@ def main():
 
     gestor.listar_clientes()
     gestor.listar_reservas()
+    # Genera el resumen final de operaciones realizadas en el sistema
     gestor.mostrar_estadisticas()
 
     print("\n  📋 Los logs completos están en: sistema_fj.log")
