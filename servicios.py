@@ -168,6 +168,7 @@ class ReservaSala(Servicio):
             raise ServicioInvalidoError(
                 "La duración (horas) debe ser un número positivo."
             )
+        # Se limita la reserva máxima de salas a 12 horas continuas
         if duracion > 12:
             raise ServicioInvalidoError(
                 "No se puede reservar una sala por más de 12 horas seguidas."
@@ -291,6 +292,7 @@ class AlquilerEquipo(Servicio):
             raise ServicioInvalidoError(
                 "No se puede alquilar un equipo por más de 30 días."
             )
+# Verifica que existan suficientes equipos disponibles para el alquiler
         if cantidad > self.__cantidad_disponible:
             raise ServicioInvalidoError(
                 f"Solo hay {self.__cantidad_disponible} unidades disponibles "
@@ -311,12 +313,12 @@ class AlquilerEquipo(Servicio):
         self.validar_parametros(duracion, cantidad)
 
         costo = self.__precio_dia * duracion * cantidad
-
+# Verifica si el usuario desea aplicar un descuento al servicio
         if descuento > 0:
             if not (0 < descuento < 100):
                 raise ServicioInvalidoError("El descuento debe estar entre 0 y 100.")
             costo = costo * (1 - descuento / 100)
-
+# Aplica el IVA correspondiente al costo total del servicio
         if con_impuesto:
             costo = costo * 1.19
 
@@ -404,6 +406,7 @@ class Asesoria(Servicio):
             raise ServicioInvalidoError(
                 "El número de sesiones debe ser un entero positivo."
             )
+     # Se controla que las asesorías no excedan el número permitido de sesiones
         if duracion > 20:
             raise ServicioInvalidoError(
                 "No se pueden contratar más de 20 sesiones a la vez."
