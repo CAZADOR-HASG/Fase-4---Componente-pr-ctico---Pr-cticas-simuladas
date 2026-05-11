@@ -207,25 +207,32 @@ def main():
         id_servicio="SRV001",
         duracion=99,                   # ← más de 12 horas (límite de salas)
     )
-
+    # OP 20: Reserva con descuento inválido → debe fallar
+    gestor.crear_reserva(
+        id_reserva="RES007",
+        id_cliente="CLI001",
+        id_servicio="SRV001",
+        duracion=2,
+        descuento=150      # ← descuento inválido mayor al 100%
+    )
     # =========================================================================
     # SECCIÓN 4: CANCELACIÓN DE RESERVAS
     # =========================================================================
     separador("CANCELACIÓN DE RESERVAS")
 
-    # OP 20: Cancelar reserva existente → debe cancelarse
+    # OP 21: Cancelar reserva existente → debe cancelarse
     gestor.cancelar_reserva(
         id_reserva="RES001",
         motivo="El cliente reprogramó la reunión"
     )
 
-    # OP 21: Cancelar reserva ya cancelada → debe fallar
+    # OP 22: Cancelar reserva ya cancelada → debe fallar
     gestor.cancelar_reserva(
         id_reserva="RES001",           # ← ya fue cancelada arriba
         motivo="Intento duplicado"
     )
 
-    # OP 22: Cancelar reserva inexistente → debe fallar
+    # OP 23: Cancelar reserva inexistente → debe fallar
     gestor.cancelar_reserva(
         id_reserva="RES999",           # ← no existe
         motivo="Error de sistema"
