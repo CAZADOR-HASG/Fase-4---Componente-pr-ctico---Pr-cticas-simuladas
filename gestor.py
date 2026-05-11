@@ -32,6 +32,7 @@ class GestorSistema:
     """
 
     def __init__(self):
+        # El sistema almacena toda la información en memoria utilizando diccionarios
         # Listas internas (en lugar de base de datos)
         self.__clientes  = {}   # dict: id_cliente → objeto Cliente
         self.__servicios = {}   # dict: id_servicio → objeto Servicio
@@ -56,6 +57,7 @@ class GestorSistema:
         Registra un nuevo cliente en el sistema.
         Demuestra: try/except/else/finally
         """
+        # Se incrementa el contador general de operaciones del sistema
         self.__total_operaciones += 1
         print(f"\n[OP {self.__total_operaciones}] Registrando cliente: {nombre}...")
 
@@ -145,7 +147,7 @@ class GestorSistema:
             logger.error(f"Equipo inválido {id_servicio}: {e}")
             print(f"  ❌ Error creando equipo: {e}")
             return None
-
+            
         except Exception as e:
             self.__operaciones_fallidas += 1
             logger.critical(f"Error inesperado registrando equipo: {e}")
@@ -170,7 +172,7 @@ class GestorSistema:
             logger.error(f"Asesoría inválida {id_servicio}: {e}")
             print(f"  ❌ Error creando asesoría: {e}")
             return None
-
+        # Captura errores inesperados para evitar que el sistema se detenga
         except Exception as e:
             self.__operaciones_fallidas += 1
             logger.critical(f"Error inesperado registrando asesoría: {e}")
@@ -191,13 +193,14 @@ class GestorSistema:
         print(f"\n[OP {self.__total_operaciones}] Creando reserva {id_reserva}...")
 
         try:
+            # Se valida que el cliente exista antes de crear la reserva
             # 1. Buscar el cliente
             if id_cliente not in self.__clientes:
                 raise ReservaInvalidaError(
                     f"No existe cliente con ID '{id_cliente}'."
                 )
             cliente = self.__clientes[id_cliente]
-
+            # Se verifica que el servicio solicitado esté registrado en el sistema
             # 2. Buscar el servicio
             if id_servicio not in self.__servicios:
                 raise ReservaInvalidaError(
@@ -210,7 +213,7 @@ class GestorSistema:
 
             # 4. Confirmar la reserva (aquí pueden ocurrir más excepciones)
             reserva.confirmar(descuento=descuento, con_impuesto=con_impuesto)
-
+            # La reserva confirmada se almacena en memoria para futuras consultas
             # 5. Guardar en la lista
             self.__reservas[id_reserva] = reserva
             self.__operaciones_exitosas += 1
@@ -234,7 +237,7 @@ class GestorSistema:
             logger.error(f"Error del sistema en reserva {id_reserva}: {e}")
             print(f"  ❌ Error del sistema: {e}")
             return None
-
+        # Captura errores inesperados para evitar que el sistema se detenga
         except Exception as e:
             self.__operaciones_fallidas += 1
             logger.critical(f"Error crítico inesperado en reserva {id_reserva}: {e}")
