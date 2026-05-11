@@ -11,3 +11,10 @@ implementando principios de programación orientada a objetos como abstracción,
 - Implementación de programación orientada a objetos.
 - Uso de abstracción, herencia, encapsulación y polimorfismo.
 - Simulación de operaciones válidas e inválidas sin uso de bases de datos.
+## Tecnologías utilizadas
+
+- Python
+- Programación Orientada a Objetos (POO)
+- GitHub
+- Manejo de excepciones
+- Archivos logs
