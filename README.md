@@ -18,3 +18,9 @@ implementando principios de programación orientada a objetos como abstracción,
 - GitHub
 - Manejo de excepciones
 - Archivos logs
+## Ejecución del sistema
+
+1. Descargar o clonar el repositorio.
+2. Abrir el proyecto en Visual Studio Code.
+3. Ejecutar el archivo main.py.
+4. Verificar las operaciones realizadas y los registros almacenados en el archivo sistema_fj.log.
